@@ -27,32 +27,78 @@
 //	ps = NULL;
 //	return 0;
 //}
+#define MAX 7.0
 int main()
 {
 	int n = 0;
 	int i = 0;
-	while (scanf("%d", &n) != EOF)
+	//while (scanf("%d", &n) != EOF)
+	//{
+
+
+	//	for (i = 0; i < n; i++)
+	//	{
+	//		int j = 0;
+	//		for (j = 0; j < n; j++)
+	//			if (j == i)
+	//			{
+	//				printf("*");
+	//			}
+	//			else if (i + j == n - 1)
+	//			{
+	//				printf("*");
+	//			}
+	//			else
+	//			{
+	//				printf(" ");
+	//			}
+	//		printf("\n");
+	//	}
+	//}
+	//int n = 0;
+	//int sum = 0;
+	//int min = 100; int max = 0;
+	//for (i = 0; i < MAX; i++)
+	//{
+	//	scanf("%d", &n);
+	//	if (n > max)
+	//	{
+	//		max = n;
+	//	}
+	//	if (min > n)
+	//	{
+	//		min = n;
+	//	}
+	//	sum = sum + n;
+	//}
+	//printf("%.2f\n", (sum - max - min) / 5.0);
+	//int n = 0;
+	int x = 0;
+	int tmp = 0;
+	scanf("%d", &n);
+	int arr[50] = { 0 };
+	for (i = 0; i <= n-1; i++)
 	{
-
-
-		for (i = 0; i < n; i++)
+		int x = 0;
+		scanf("%d", &x);
+		arr[i] = x;
+	}
+	int m = 0;
+	scanf("%d", &m);
+	for (i = 0; i <= n-1; i++)
+	{
+		if (arr[i] > m)
 		{
-			int j = 0;
-			for (j = 0; j < n; j++)
-				if (j == i)
-				{
-					printf("*");
-				}
-				else if (i + j == n - 1)
-				{
-					printf("*");
-				}
-				else
-				{
-					printf(" ");
-				}
-			printf("\n");
+			tmp = arr[i];
+			arr[i] = m;
+			m = tmp;
 		}
 	}
+	arr[n] = m; 
+	for (i = 0; i <= n; i++)
+	{
+		printf("%d ",arr[i]);
+	}
+	
 	return 0;
 }
